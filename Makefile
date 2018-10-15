@@ -26,9 +26,9 @@ depend-update:
 generate: gendeepcopy
 
 gendeepcopy:
-	go build -o $$GOPATH/bin/deepcopy-gen sigs.k8s.io/cluster-api-provider-skeleton/vendor/k8s.io/code-generator/cmd/deepcopy-gen
+	go build -o $$GOPATH/bin/deepcopy-gen sigs.k8s.io/cluster-api-provider-aws-eks/vendor/k8s.io/code-generator/cmd/deepcopy-gen
 	deepcopy-gen \
-	  -i ./cloud/skeleton/providerconfig,./cloud/skeleton/providerconfig/v1alpha1 \
+	  -i ./cloud/aws-eks/providerconfig,./cloud/aws-eks/providerconfig/v1alpha1 \
 	  -O zz_generated.deepcopy \
 	  -h boilerplate.go.txt
 

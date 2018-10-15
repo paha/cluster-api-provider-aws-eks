@@ -464,13 +464,12 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:fe828a7a4f128b999e78fba608fdbd916e1a68308e7242182e9aab39830dbe2c"
+  digest = "1:9cb204a0b6f21267a73aade839db31cab3489d99d55db5d637451f1646b6badf"
   name = "sigs.k8s.io/cluster-api"
   packages = [
     "pkg/apis",
     "pkg/apis/cluster/common",
     "pkg/apis/cluster/v1alpha1",
-    "pkg/client/clientset_generated/clientset",
     "pkg/client/clientset_generated/clientset/scheme",
     "pkg/client/clientset_generated/clientset/typed/cluster/v1alpha1",
     "pkg/controller/cluster",
@@ -527,7 +526,6 @@
     "sigs.k8s.io/cluster-api/pkg/apis",
     "sigs.k8s.io/cluster-api/pkg/apis/cluster/common",
     "sigs.k8s.io/cluster-api/pkg/apis/cluster/v1alpha1",
-    "sigs.k8s.io/cluster-api/pkg/client/clientset_generated/clientset",
     "sigs.k8s.io/cluster-api/pkg/client/clientset_generated/clientset/typed/cluster/v1alpha1",
     "sigs.k8s.io/cluster-api/pkg/controller/cluster",
     "sigs.k8s.io/cluster-api/pkg/controller/machine",

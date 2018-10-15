@@ -29,16 +29,16 @@ import (
 	logf "sigs.k8s.io/controller-runtime/pkg/runtime/log"
 	"sigs.k8s.io/controller-runtime/pkg/runtime/signals"
 
-	"sigs.k8s.io/cluster-api-provider-skeleton/pkg/cloud/skeleton/actuators/cluster"
-	"sigs.k8s.io/cluster-api-provider-skeleton/pkg/cloud/skeleton/actuators/machine"
-	"sigs.k8s.io/cluster-api-provider-skeleton/pkg/cloud/skeleton/providerconfig"
+	"sigs.k8s.io/cluster-api-provider-aws-eks/pkg/cloud/aws-eks/actuators/cluster"
+	"sigs.k8s.io/cluster-api-provider-aws-eks/pkg/cloud/aws-eks/actuators/machine"
+	"sigs.k8s.io/cluster-api-provider-aws-eks/pkg/cloud/aws-eks/providerconfig"
 )
 
 func main() {
 	cfg := config.GetConfigOrDie()
 
 	flag.Parse()
-	log := logf.Log.WithName("skeleton-controller-manager")
+	log := logf.Log.WithName("aws-eks-controller-manager")
 	logf.SetLogger(logf.ZapLogger(false))
 	entryLog := log.WithName("entrypoint")
 
@@ -54,7 +54,7 @@ func main() {
 	machineActuator, _ := machine.NewActuator(machine.ActuatorParams{})
 
 	// The machineActuator implements ClusterProvider, see details in machine/actuator.go
-	common.RegisterClusterProvisioner("skeleton", machineActuator)
+	common.RegisterClusterProvisioner("aws-eks", machineActuator)
 	if err := providerconfig.AddToScheme(mgr.GetScheme()); err != nil {
 		panic(err)
 	}

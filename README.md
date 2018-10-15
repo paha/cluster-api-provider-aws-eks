@@ -21,16 +21,16 @@ empty GitHub repo under your org using the GitHub GUI, for example
 https://github.com/samsung-cnct/cluster-api-provider-ssh.
 
 - [Duplicate](https://help.github.com/articles/duplicating-a-repository/)
-this repo (https://github.com/davidewatson/cluster-api-provider-skeleton) and
+this repo (https://github.com/davidewatson/cluster-api-provider-aws-eks) and
 push it to the `cluster-api-provider-ssh` repo you created in the previous
 step. Note the arguments to clone and push.
 
 ```
-git clone --bare https://github.com/davidewatson/cluster-api-provider-skeleton.git
-cd cluster-api-provider-skeleton.git
+git clone --bare https://github.com/davidewatson/cluster-api-provider-aws-eks.git
+cd cluster-api-provider-aws-eks.git
 git push --mirror https://github.com/davidewatson/cluster-api-provider-ssh.git
 cd ..
-rm -rf cluster-api-provider-skeleton.git
+rm -rf cluster-api-provider-aws-eks.git
 ```
 
 - Clone the new repository.
@@ -47,14 +47,14 @@ cd cluster-api-provider-ssh
 some name changes, e.g. on OS X, something like this might work:
 
 ```
-find ./* -type f  -path ./vendor -prune -o -path ./.git -prune -o -exec sed -i '' -e 's/skeleton/ssh/g' {} \;
-find ./* -type f  -path ./vendor -prune -o -path ./.git -prune -o -exec sed -i '' -e 's/Skeleton/SSH/g' {} \;
+find ./* -type f  -path ./vendor -prune -o -path ./.git -prune -o -exec sed -i '' -e 's/aws-eks/ssh/g' {} \;
+find ./* -type f  -path ./vendor -prune -o -path ./.git -prune -o -exec sed -i '' -e 's/AWS-eks/SSH/g' {} \;
 ```
 
 The following directory must be renamed/moved:
 
 ```
-git mv pkg/cloud/skeleton/ pkg/cloud/ssh/
+git mv pkg/cloud/aws-eks/ pkg/cloud/ssh/
 ```
 
 For other changes, like the README.md, OWNERS_ALIASES, etc., you'll have to

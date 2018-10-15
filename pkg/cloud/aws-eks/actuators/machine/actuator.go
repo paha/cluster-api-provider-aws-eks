@@ -22,7 +22,7 @@ import (
 )
 
 const (
-	ProviderName = "skeleton"
+	ProviderName = "aws-eks"
 )
 
 // Actuator is responsible for performing machine reconciliation

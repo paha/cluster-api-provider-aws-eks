@@ -2,11 +2,11 @@
 
 approvers:
   - sig-cluster-lifecycle-leads
-  - sig-skeleton-leads
+  - sig-aws-eks-leads
   - cluster-api-admins
   - cluster-api-maintainers
-  - cluster-api-skeleton-maintainers
+  - cluster-api-aws-eks-maintainers
 
 reviewers:
   - cluster-api-maintainers
-  - cluster-api-skeleton-maintainers
+  - cluster-api-aws-eks-maintainers
